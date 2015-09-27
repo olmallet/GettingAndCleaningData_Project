@@ -35,12 +35,15 @@ colnames (Subtrain) <- ("Subject_ID")
 Xtrain <- cbind (Xtrain, Subtrain)
 
 ## Merge train and test data by rows and keep only complete observations
+## X is the name of the dataframe built up during steps 1 through 4
 X <- rbind (Xtest, Xtrain)
-X <- X[complete.cases (X),]
 
 ## Step 2 : Select only means and std columns, as well as the Activity and Subject_ID columns
 select = grep("mean\\(\\)|std\\(\\)|Activity|Subject_ID", names(X)) 
 X<- X[select]
+
+## Remove incomplete observations
+X <- X[complete.cases (X),]
 
 ## Step 3 : Load activities names and add it as last column to data set
 actinames <- read.table ("UCI HAR Dataset/activity_labels.txt")
@@ -52,11 +55,12 @@ X[,1] <- NULL
 
 ## Step 4 : has already been performed during step 1 when inserting variable names
 
-## Step 5 : group X observations by subject and activity and take the mean of each variable 
+## Step 5 : group X observations by subject and activity and take the mean of each variable
+## Z is the name of the second dataframe derived from X for step 5
 Z <- group_by(X, Subject_ID, Activity) 
 Z <- summarize_each (Z, funs(mean))
 
 ## Save it in a file
-write.table(Z, "output.txt", row.name=FALSE)
+write.table(Z, "Result.txt", row.name=FALSE)
 
 ## End of script
