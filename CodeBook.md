@@ -51,7 +51,7 @@ The last section of this CodeBook gives more details on the names and meanings.
 We split the data per Activity and Subject, and apply the mean function for all variables.
 Data is then saved to "output.txt" file.
 
-## 3. Variable names
+## 3. Variable description
 The first two variables are :
 * SUBJECT_ID : the identifier of the subject performing activities
 * Activity : the type of activity performed by subject
