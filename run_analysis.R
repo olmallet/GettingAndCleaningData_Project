@@ -5,6 +5,8 @@ library (dplyr)
 ## Step 1
 ## Load column names with the 561 features names
 cols <- read.table ("UCI HAR Dataset/features.txt")$V2
+## Fix some column names with bodybody instead of body
+cols <- gsub ("BodyBody","Body",cols)
 
 ## Load test data and name columns (step 4)
 Xtest <- read.table ("UCI HAR Dataset/test/X_test.txt")
