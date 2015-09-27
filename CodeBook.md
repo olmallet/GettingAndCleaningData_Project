@@ -27,6 +27,7 @@ Note : The files in the "Inertial Signal" directories are not useful because the
 We follow these steps both for train and test data :
 * load X_test/train data (the 561 features)
 * add column names read from the features.txt file
+* fix the columns wrongly named with bodybody (see section 3)
 * add Activity_ID read from the Y_test/train file
 * add Subject_ID read from the subject_test/train file
 
@@ -83,20 +84,17 @@ These signals were used to estimate variables of the feature vector for each pat
 * fBodyAccJerk-XYZ
 * fBodyGyro-XYZ
 * fBodyAccMag
-* fBodyAccJerkMag
-* fBodyGyroMag
-* fBodyGyroJerkMag
+* fBodyAccJerkMag (note : misnamed fBodyBodyAccJerkMag in data set)
+* fBodyGyroMag (note : misnamed fBodyBodyGyroMag in data set)
+* fBodyGyroJerkMag (note : misnamed fBodyBodyGyroJerkMag in data set)
 
 The set of variables that were estimated from these signals are: 
 * mean(): Mean value
 * std(): Standard deviation
-Note : additional estimations are present in the data set but not used for this project.
+Note : additional estimations are present in the full data set but not used for this project.
 
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-* gravityMean
-* tBodyAccMean
-* tBodyAccJerkMean
-* tBodyGyroMean
-* tBodyGyroJerkMean
+Units used for numeric variables :
+* For accelerations (all names not mentioning jerk) : m/s^2
+* For jerks : m/s^3
 
 END OF CODEBOOK
