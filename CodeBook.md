@@ -94,7 +94,9 @@ The set of variables that were estimated from these signals are:
 Note : additional estimations are present in the full data set but not used for this project.
 
 Units used for numeric variables :
-* For accelerations (all names not mentioning jerk) : m/s^2
-* For jerks : m/s^3
+* For Gyro : rad/s^2
+* For GyroJerk : rad/s^3
+* For Acc : standard gravity unit (g=9,81 m/s^2)
+* For AccJerk : g/s
 
 END OF CODEBOOK
