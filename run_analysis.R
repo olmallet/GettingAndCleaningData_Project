@@ -62,5 +62,6 @@ Z <- summarize_each (Z, funs(mean))
 
 ## Save it in a file
 write.table(Z, "Result.txt", row.name=FALSE)
+print ("Result of step 5 is in file Result.txt")
 
 ## End of script
