@@ -6,3 +6,5 @@ This repo contains :
 * the script file "run_analysis.R" implementing steps 1 through 5
 * a "CodeBook.md" file providing details about processing and output
 * a sample of the output file : "Result.txt"
+
+Note : the "UCI HAR Dataset" directory containing Data set has to be in the working directory.
